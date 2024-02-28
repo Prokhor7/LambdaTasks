@@ -1,0 +1,5 @@
+{"name":"Masha","gender":"female","age":"22"}
+{"name":"Sasha","gender":"male","age":"24"}
+{"name":"Olivia","gender":"female","age":"19"}
+{"name":"Ryan","gender":"male","age":"28"}
+{"name":"James","gender":"male","age":"20"}

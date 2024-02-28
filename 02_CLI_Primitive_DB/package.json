@@ -1,0 +1,9 @@
+{
+  "type": "module",
+  "scripts": {
+    "start": "node cli-primitive-db.js"
+  },
+  "dependencies": {
+    "inquirer": "^9.2.15"
+  }
+}
