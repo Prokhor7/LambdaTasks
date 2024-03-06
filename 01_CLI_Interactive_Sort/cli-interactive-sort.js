@@ -67,7 +67,7 @@ const numbersInAscendingOrder = {
     return "Display the numbers in ascending order.";
   },
   perform(data) {
-    data.numbers.sort();
+    data.numbers.sort((a, b) => a - b);
     console.log(data.numbers);
   },
 };
