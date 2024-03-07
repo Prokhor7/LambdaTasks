@@ -1,3 +1,4 @@
+import fs from "fs";
 import data from "./vacations.json";
 
 type OldVacationDto = {
@@ -39,7 +40,9 @@ class Vacation {
   }
 }
 
-const getFormattedVacations = (vacations: OldVacationDto[]): Vacation[] => {
+const getFormattedVacations = (
+  vacations: OldVacationDto[]
+): NewVacationDto[] => {
   const formattedVacations = new Map<string, NewVacationDto>();
 
   vacations.forEach((vacation) => {
@@ -59,13 +62,17 @@ const getFormattedVacations = (vacations: OldVacationDto[]): Vacation[] => {
     }
   });
 
-  return Array.from(formattedVacations.values()).map(
-    (vacation) => new Vacation(vacation)
-  );
+  return Array.from(formattedVacations.values());
 };
 
 const main = () => {
-  console.log(`[\n${getFormattedVacations(data)}]`);
+  const formattedVacations = getFormattedVacations(data);
+  console.log(
+    `[\n${formattedVacations.map((vacation) => new Vacation(vacation))}]`
+  );
+  const formattedJson = JSON.stringify(formattedVacations, null, 2);
+  fs.writeFileSync("formatted-vacations.json", formattedJson, "utf-8");
+  console.log("Formatted JSON saved to formatted-vacations.json");
 };
 
 main();
