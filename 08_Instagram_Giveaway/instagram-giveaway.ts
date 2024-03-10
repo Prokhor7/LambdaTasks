@@ -18,7 +18,6 @@ const readFiles = (): Map<string, number> => {
       .forEach((phrase) => {
         if (!uniquePhrases.has(phrase)) {
           phrases.set(phrase, (phrases.get(phrase)! || 0) + 1);
-        } else if (!uniquePhrases.has(phrase)) {
           uniquePhrases.add(phrase);
         }
       });
