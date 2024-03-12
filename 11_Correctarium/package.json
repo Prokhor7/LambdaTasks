@@ -1,0 +1,8 @@
+{
+  "name": "correctarium",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ]
+}
